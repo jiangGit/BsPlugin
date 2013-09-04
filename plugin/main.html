@@ -1,0 +1,328 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+</head>
+<body>
+<title>我的记事本</title>
+<link rel="stylesheet" href="../css/jquery.wysiwyg.css">
+<link rel="stylesheet" href="../css/css.css">
+<div id="main">
+	<header class="header">
+		<div class="ht home" title="主目录">
+			<span class="ico"></span>
+		</div>
+		<div class="ht back" title="返回" style="display:none;">
+			<span class="ico"></span>
+		</div>
+		<div class="ht me" title="个人中心">
+			<span class="ico"></span>
+			<span class="info">xxxxx</span>
+		</div>
+		<div class="ht quit"  title="退出">
+			<span class="ico"></span>
+		</div>
+	</header>
+	<!-- 欢迎 -->
+	<section>
+		
+	</section>
+	
+	<!-- 登陆 -->
+	<section id="login">
+		<div class="main">
+			
+				<div>
+					<input id="login_username" type="text" name="username" placeholder="用户名" autocomplete ="off">
+				</div>
+				<div>
+					<input id="login_password" type="password" name="psw" placeholder="请输入密码"  autocomplete ="off">
+				</div>		
+				<button id="login_btn" > 登录 </button>
+				<a id="to_register" href="javascript:void(0)">没有账号？去注册</a>
+			
+		</div>
+	</section>
+	<!-- 注册 -->
+	<section id="register">
+		<div class="main">
+		
+			<div>
+				<input id="register_username" type="text" name="username" placeholder="用户名"  autocomplete ="off">
+			</div>
+			<div>
+				<input id="register_password" type="password" name="psw" placeholder="密码"  autocomplete ="off">
+			</div>
+			<div>
+				<input id="register_password_r" type="password"  placeholder="重复密码"  autocomplete ="off">
+			</div>
+			<button id="register_btn"> 注册 </button>
+		
+		</div>
+	</section>
+	<!-- 菜单页 -->
+	<section id="menu">
+		<nav> 
+			<ul>
+				<li class="button">
+					<a id="menu_note" >记事本</a>
+				</li>
+				<li class="button">
+					<a id="menu_wacom" >手写板</a>
+				</li>
+				<!--
+				<li class="button" id="menu_remind">
+					<a>待办事件</a>
+				</li>
+				<li class="button" id="menu_remind">
+					<a>设置</a>
+				</li>
+				-->
+				<li class="button" id="menu_quit">
+					<a>退出</a>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	
+	<!-- 记事本列表 -->
+	<section id="note_list">
+		<nav class="left_list">
+			<h1>记事本列表</h1>
+			<span class="newBtn"></span>
+			<ul>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+			</ul>
+			<div class="trash" title="回收站"></div>
+		</nav>
+		<!-- 记事本内容 -->
+		<div id="note_view" class="right_view">
+			<h2>XX标题</h2>
+			<div class="content">
+				<p>内容内容内容内容内容内容内容内容内容</p>
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容				
+			</div>
+			<div>
+				<button class="edit_btn">编辑</button>
+			</div>
+		</div>
+		
+	</section>
+	
+	
+	
+	<!-- 记事本内容编辑 -->
+	<section id="note_edit">
+		<div>
+			<input type="text" name="title" value="XXXXXXXXX"  autocomplete ="off">
+		</div>
+		<div class="edit_view">
+			<!--
+			<div class="content" contenteditable="true">
+				XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+			</div>
+			-->
+			<textarea  class="content" rows="14" cols="90" style="display:none;">
+			
+			</textarea>
+			<div>
+				<button class="save_btn">保存</button>
+			</div>
+		</div>
+	</section>
+	
+	
+	<!-- 记事本冲突选择 -->
+	<section id="note_conflict" class="conflict">
+		<div class="pre">
+			<p class="tip">服务器版本</p>
+			<h2>XX标题</h2>
+			<div class="content">
+				<p>内容内容内容内容内容内容内容内容内容</p>
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容				
+			</div>
+			<div>
+				<button class="select_btn">保持不变</button>
+			</div>
+		</div>
+		<div class="loca">
+			<p class="tip">本地版本</p>
+			<h2>XX标题</h2>
+			<div class="content">
+				<p>内容内容内容内容内容内容内容内容内容</p>
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容
+				内容内容内容内容内容内容内容内容内容				
+			</div>
+			<div>
+				<button class="select_btn">替换</button>
+			</div>
+		</div>
+	</section>
+	
+	<!-- 手写板列表 -->
+	<section id="wacom_list" >
+		<nav class="left_list">
+			<h1>手写板列表</h1>
+			<span class="newBtn"></span>
+			<ul>
+				<li class="on">
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+				<li>
+					<a>XXXXXXXXXXXXXX</a>
+					<span class="rmBtn"></span>
+				</li>
+			</ul>
+			<div class="trash" title="回收站"></div>
+		</nav>
+		<!-- 手写板内容 -->
+		<div id="wacom_view" class="right_view">
+			<h2>XX标题</h2>
+			<div class="content">
+				<canvas class="wb" width="650" height="450">
+				</canvas>
+			</div>
+			<div>
+				<button class="edit_btn">编辑</button>
+			</div>
+		</div>
+		
+	</section>
+	
+	
+	
+	<!-- 手写板编辑 -->
+	<section id="wacom_edit">
+		<div>
+			<input type="text" name="title" value="XXXXXXXXX">
+		</div>
+		<div class="edit_view">
+			<div class="content">
+			<canvas  class="bl-pen" width="650" height="450" >
+
+			</canvas>
+			<ul class="tool">
+				<li class="r" title="red"></li>
+				<li class="o" title="orange"></li>
+				<li class="y" title="yellow"></li>
+				<li class="g" title="green"></li>
+				<li class="b" title="blue"></li>
+				<li class="p" title="purple"></li>
+				<li class="bl" title="black"></li>
+				<li class="w" title="white"></li>		
+			</ul>
+			<ul class="size">
+				<li class="s1"><span></span></li>
+				<li class="s5"><span></span></li>
+				<li class="s8"><span></span></li>
+				<li class="s12"><span></span></li>
+				<li class="s16"><span></span></li>
+				<li class="s20"><span></span></li>
+				<li class="s24"><span></span></li>
+				<li class="s30"><span></span></li>
+			</ul>
+			<div id="fileBox">
+				<button>打开文件</button>
+				<input id="file" name="file" type="file">
+			</div>
+			</div>
+			<div>
+				<button class="save_btn">保存</button>
+			</div>
+		</div>
+	</section>
+	
+	<!-- 手写板冲突选择 -->
+	<section id="wacom_conflict" class="conflict">
+		<div class="pre">
+			<p class="tip">服务器版本</p>
+			<h2>XX标题</h2>
+			<div class="content">
+				<canvas class="wb" width="500" height="350">
+				</canvas>			
+			</div>
+			<div>
+				<button class="select_btn">保持不变</button>
+			</div>
+		</div>
+		<div class="loca">
+			<p class="tip">本地版本</p>
+			<h2>XX标题</h2>
+			<div class="content">
+				<canvas class="wb" width="500" height="350">
+				</canvas>			
+			</div>
+			<div>
+				<button class="select_btn">替换</button>
+			</div>
+		</div>
+	</section>
+	
+	<!-- 待办事件列表 -->
+	<section>
+		
+	</section>
+	
+	<!-- 待办事件内容详情 -->
+	<section>
+		
+	</section>
+	
+	<!-- 待办事件内容编辑 -->
+	<section>
+		
+	</section>
+</div>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.md5.js"></script>
+<script type="text/javascript" src="../js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="../js/jquery.wysiwyg.js"></script>
+<script type="text/javascript" src="../js/uitl.js"></script>
+<script type="text/javascript" src="../js/DB.js"></script>
+<script type="text/javascript" src="../js/conf.js"></script>
+<script type="text/javascript" src="../js/view.js"></script>
+<script type="text/javascript" src="../js/user.js"></script>
+<script type="text/javascript" src="../js/note.js"></script>
+<script type="text/javascript" src="../js/wacom.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>

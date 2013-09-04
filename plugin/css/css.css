@@ -1,0 +1,509 @@
+*{
+padding:0;
+margin:0;
+}
+html{
+min-height: 80px;
+font: 12px/1.125 Arial,Helvetica,sans-serif;
+}
+
+body{
+background:url(../img/bg.jpg);
+-webkit-animation: spin 5s linear infinite;
+overflow:hidden;
+}
+
+
+a{
+text-decoration: none;
+}
+
+input{
+font-size: 24px;
+}
+
+input[type=text],input[type=password]{
+width: 300px;
+height: 40px;
+margin: 15px;
+border: solid 1px rgb(102, 214, 205);
+border-radius: 10px;
+text-align: center;
+outline: none;
+}
+
+button ,.button{
+display:block;
+width: 300px;
+height: 40px;
+margin: 15px;
+cursor: pointer;
+color: #ffffff;
+background-color: #5bb75b;
+border-radius: 10px;
+border-width: 1px;
+font-size:24px;
+font-weight: normal;
+text-align: center;
+}
+
+button:hover,.button:hover{
+background-color: #51a351;
+}
+section{
+display:none;
+width: 800px;
+min-height: 600px;
+margin: 80px auto;
+background-color: rgba(139, 139, 139, 0.4);
+border: 1px solid #fbeed5;
+box-shadow: 0px 0px 30px #bababa;
+border-radius: 4px;
+}
+canvas{ 
+box-shadow:0px 0px 30px #bababa;
+}
+
+.wb{
+background:#FFF;
+}
+
+header{
+height: 39px;
+left: 0;
+position: fixed;
+top: 0;
+width: 100%;
+border-bottom: 1px solid #fbeed5;
+box-shadow: 0px 0px 30px #bababa;
+z-index: 9999;
+background: url("../img/bg_nav.png") 0 -40px;
+}
+header .ht{
+float:left;
+color: #FFFFFF;
+display: block;
+height: 27px;
+padding: 11px 0 0 12px;
+position: relative;
+width: 30px;
+cursor:pointer;
+z-index: 9999;
+left: 50%;
+}
+header .ht:hover{
+background-image: url("../img/bg_nav.png");
+}
+.ht .ico{
+background: url("../img/icon.png") no-repeat scroll transparent;
+display: inline-block;
+height: 20px;
+overflow: hidden;
+width: 20px;
+}
+header .home{
+margin-left: -440px;
+}
+.home .ico{
+background-position:-25px -25px;
+}
+header .back{
+margin-left: -440px;
+}
+.back .ico{
+background-position:-168px -200px;
+}
+header .me{
+width: 120px;
+margin-left: -120px;
+}
+.me .ico{
+float:left;
+background-position: -25px -148px;
+}
+.me .info{
+max-width:100px;
+float:left;
+margin:5px 0 0 15px;
+}
+header .quit{
+margin-left: 400px;
+}
+.quit .ico{
+background-position:-144px -148px;
+}
+
+#menu li{
+list-style-type: none;
+line-height:40px;
+}
+
+#login .main ,#register .main,#menu nav{
+width: 330px;
+margin: 120px auto;
+}
+
+#to_register{
+margin: 0 0 0 215px;
+color:#AAA;
+}
+#to_register:hover{
+color:#5bb75b;
+}
+
+#note_list,#wacom_list{
+width:1000px;
+}
+.left_list{
+position: relative;
+width: 240px;
+height: 550px;
+margin: 15px;
+padding:10px;
+float:left;
+border: solid 1px #aaa;
+border-radius: 10px;
+background:#ECECEC;
+}
+
+.left_list h1{
+text-align: center;
+margin: 10px;
+height: 30px;
+line-height: 30px;
+}
+
+.left_list ul{
+list-style: none;
+margin:5px;
+max-height: 450px;
+}
+.left_list ul a{
+width: 90%;
+height: 20px;
+display: block;
+margin: 5px 0;
+font-size: 18px;
+overflow:hidden;
+cursor: pointer;
+}
+.left_list li{
+height:22px;
+padding:2px 2px 0 2px;
+border-bottom: solid 1px #AAA;
+}
+.left_list .on{
+background: rgb(183, 248, 157);
+}
+
+.left_list .trash{
+position: absolute;
+bottom: 2px;
+cursor: pointer;
+margin-top: 2px;
+margin-right: 3px;
+height: 20px;
+width: 20px;
+background: url(../img/icons-20.png) no-repeat -60px -1px;
+}
+.left_list .trash:hover::before {
+    background-position-y: -21px;
+}
+
+.right_view{
+float:right;
+height: 550px;
+width: 650px;
+margin: 15px;
+padding:10px;
+border: solid 1px #aaa;
+border-radius: 10px;
+background: rgb(242, 245, 184);
+}
+.right_view h2{
+margin: 5px 0;
+font-size: 24px;
+border-bottom: solid 1px #AAA;
+text-align: center;
+line-height: 36px;
+height: 36px;
+overflow: hidden;
+}
+.right_view .content{
+width: 100%;
+overflow-x:hidden;
+overflow-y:auto;
+height:450px;
+font-size:16px;
+word-wrap: break-word; 
+word-break: normal; 
+}
+.right_view .edit_btn{
+width:620px;
+}
+.newBtn, #syncBtn {
+	float: right;
+	margin: -34px 13px 0 0;
+    width:20px;
+    height:20px;
+    background:url(../img/icons-20.png) -20px 0 no-repeat;
+	cursor: pointer;
+	border:1px solid #999;
+	border-radius:5px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+}
+.newBtn:hover {
+    background-position-y:-20px;
+    border-color: #303030;
+    -webkit-box-shadow: 0 1px 3px rgba(255, 255, 255, 1);
+	border-color: #303030;
+	color:#303030;
+  -webkit-box-shadow: 0 1px 3px rgba(255, 255, 255, 1);	
+}
+.rmBtn{
+float: right;
+width: 20px;
+height: 20px;
+margin-top: -28px;
+background: url(../img/icons-22.png) 0 0 no-repeat;
+cursor: pointer;
+}
+.rmBtn:hover {
+    background-position-y:-20px;
+}
+
+#note_edit input[type="text"],#wacom_edit input[type="text"]{
+display: block;
+width: 95%;
+text-align: center;
+margin: 15px auto;
+}
+
+.edit_view .content,.edit_view .wysiwyg{
+width: 95%;
+height: 460px;
+margin: 5px auto;
+background: #FFF;
+cursor: text;
+overflow-x: hidden;
+overflow-y: auto;
+outline: none;
+}
+
+.edit_view .save_btn{
+width: 95%;
+text-align: center;
+margin: 15px auto;
+}
+
+.edit_view canvas{
+	float:left;
+}
+.edit_view  .r-pen{
+cursor:url(../img/r.cur),default;
+}
+.edit_view  .o-pen{
+cursor:url(../img/o.cur),default;
+}
+.edit_view  .y-pen{
+cursor:url(../img/y.cur),default;
+}
+.edit_view  .g-pen{
+cursor:url(../img/g.cur),default;
+}
+.edit_view  .b-pen{
+cursor:url(../img/b.cur),default;
+}
+.edit_view  .p-pen{
+cursor:url(../img/p.cur),default;
+}
+.edit_view  .bl-pen{
+cursor:url(../img/bl.cur),default;
+}
+.edit_view  .w-pen{
+cursor:url(../img/w.cur),default;
+}
+
+.edit_view .tool{
+display:block;
+margin:20px 5px;
+float:right;
+list-style: none;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+}
+.tool li{
+    width:30px;
+    height: 30px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.tool .r{
+background: red;
+}
+.tool .o{
+background: orange;
+}
+.tool .y{
+background: yellow;
+}
+.tool .g{
+background: green;
+}
+.tool .b{
+background: blue;
+}
+.tool .p{
+background: purple;
+}
+.tool .bl{
+background: black;
+}
+.tool .w{
+background: white;
+}
+.edit_view .size{
+display:block;
+margin:30px 5px;
+float:right;
+list-style: none;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+}
+.size li{
+list-style:none;
+width:30px;
+height:30px;
+border: none;
+cursor: pointer;
+}
+.size li span{
+display:block;
+background:#333;
+margin:0px auto 0;
+}
+.size .s1 span{
+height:2px;
+width:2px;
+border-radius: 1px;
+}
+.size .s5 span{
+height:5px;
+width:5px;
+border-radius: 3px;
+}
+.size .s8 span{
+height:8px;
+width:8px;
+border-radius: 4px;
+}
+.size .s12 span{
+height:12px;
+width:12px;
+border-radius: 6px;
+}
+.size .s16 span{
+height:16px;
+width:16px;
+border-radius: 8px;
+}
+.size .s20 span{
+height:20px;
+width:20px;
+border-radius: 10px;
+}
+.size .s24 span{
+height:24px;
+width:24px;
+border-radius: 12px;
+}
+.size .s30 span{
+height:30px;
+width:30px;
+border-radius: 15px;
+}
+#fileBox{
+position: relative;
+float: right;
+width: 80px;
+outline: none;
+height: 40px;
+margin-right: 10px;
+overflow:hidden;
+}
+#fileBox button{
+width: 80px;
+margin: 0;
+font-size: 14px;
+}
+#file{
+opacity: 0;
+position: absolute;
+top: 0;
+height: 40px;
+}
+.conflict {
+width: 1150px;
+}
+.conflict .pre{
+float:left;
+height: 550px;
+width: 500px;
+margin: 15px;
+padding: 10px;
+border: solid 1px #aaa;
+border-radius: 10px;
+background: rgb(209, 250, 240);
+}
+.conflict .loca{
+float:right;
+height: 550px;
+width: 500px;
+margin: 15px;
+padding: 10px;
+border: solid 1px #aaa;
+border-radius: 10px;
+background: rgb(209, 250, 240);
+}
+.tip{
+
+}
+.pre .tip{
+color: green;
+}
+.loca .tip{
+color: red;
+}
+.conflict h2{
+margin: 5px 0;
+font-size: 24px;
+border-bottom: solid 1px #AAA;
+text-align: center;
+line-height: 36px;
+overflow: hidden;
+}
+.conflict .content{
+width: 100%;
+overflow-x: hidden;
+overflow-y: auto;
+height: 435px;
+font-size: 16px;
+word-wrap: break-word;
+word-break: normal;
+}
+.conflict .select_btn{
+margin: 15px auto;
+width: 85%;
+}
+
+::-webkit-scrollbar {
+    width:12px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-image: url(../img/ReaderThumb.png) 10 0 10 0 stretch stretch;
+    border-width: 10px 0px;
+    min-height: 40px;
+}
+::-webkit-scrollbar-track {
+    -webkit-border-image: url(../img/ReaderTrack.png) 12 0 12 0 stretch stretch;
+    border-width: 12px 0px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,24 @@
+ {
+ "name": "My Note",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "HTML5本地存储与chrome云笔记", 
+   "app": {
+    "launch": {
+      "local_path": "main.html"
+    }
+  },
+  "permissions": 
+	[    
+	"tabs",
+	"notifications",
+	"cookies", 
+	"unlimitedStorage",
+	"http://jiang.scau.cn/*",
+	"file://*"
+	],  
+  "icons": {
+    "16": "img/note_16.png",
+    "128": "img/note_128.png"
+  }
+  }
